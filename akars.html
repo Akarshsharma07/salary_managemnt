@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Record Form</title>
+<style>
+.error {
+color: red;
+}
+</style>
+</head>
+<body>
+<h2>User Record Form</h2>
+<form id="userForm" onsubmit="validateForm(event)">
+<label for="name">Name:</label>
+<input type="text" id="name" required><br><br>
+<label for="email">Email:</label>
+<input type="email" id="email" required><br><br>
+<label for="age">Age:</label>
+<input type="number" id="age" required><br><br>
+<input type="submit" value="Submit">
+</form>
+<div id="message" class="error"></div>
+<script>
+function validateForm(event) { event.preventDefault();
+const form = document.getElementById('userForm'); const name = form.name.value.trim();
+const email = form.email.value.trim(); const age = form.age.value.trim();
+const message = document.getElementById('message'); message.innerHTML = '';
+
+if (!name) message.innerHTML = 'Name is required.<br>';
+ 
+if (!email) message.innerHTML += 'Email is required.<br>';
+else if (!/\S+@\S+\.\S+/.test(email)) message.innerHTML += 'Invalid email address.<br>'; if (!age) message.innerHTML += 'Age is required.<br>';
+else if (isNaN(age) || age <= 0) message.innerHTML += 'Age must be a positive number.<br>';
+
+if (message.innerHTML === '') {
+message.innerHTML = 'Data submitted successfully!'; form.reset();
+}
+}
+</script>
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consent Form</title>
+<style> h1 {
+color: rebeccapurple; text-align: center;
+}
+
+.wrapper {
+text-align: left;
+}
+
+form {
+margin: 0 auto; width: 300px;
+}
+</style>
+</head>
+<body>
+<h1>Consent Form</h1>
+<form>
+<div class="wrapper">
+<label for="name">Enter your name:</label>
+<input type="text" id="name" />
+<br>
+<label for="uid">Enter your UID:</label>
+<input type="text" id="uid" />
+<br>
+<label for="contact">contact no:</label>
+<input type="tel" id="contact" />
+<br>
+<input type="submit" value="Submit" onclick="func()" style="position: absolute;" />
+</div>
+ 
+</form>
+<script>
+function func() {
+var name = document.getElementById("name").value;
+document.write("Hello " + name + ", this text is printed using HTML DOM.");
+}
+</script>
+</body>
+</html>
